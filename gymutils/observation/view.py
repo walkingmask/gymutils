@@ -1,3 +1,4 @@
+import cv2
 import numpy as np
 from PIL import Image
 
@@ -18,3 +19,21 @@ def look(observation):
 def save(observation, path, name, prefix='', suffix='', ext='png'):
     path = "{}/{}{}{}.{}".format(path, prefix, name, suffix, ext)
     Image.fromarray(_preprocess(observation)).save(path)
+
+
+class Recorder:
+    def __init__(self, fps=15, size=(210, 160), path='.', out='out'):
+        size = (size[1], size[0])
+        out = "{}/{}.mov".format(path, out)
+        fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+        self.recorder = cv2.VideoWriter(out, fourcc, fps, size)
+
+    def record(self, observation, cvt_color=True):
+        frame = cv2.cvtColor(observation, cv2.COLOR_RGB2BGR) if cvt_color else observation
+        self.recorder.write(frame)
+
+    def stop(self):
+        self.recorder.release()
+    
+    def __del__(self):
+        self.stop()
