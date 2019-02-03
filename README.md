@@ -106,6 +106,7 @@ gymutils
 │   ├── Recorder(fps=15, size=(210, 160), path='.', out='out')
 │   │   ├── record(observations, cvt_color=True)
 │   │   └── stop()
+│   ├── save(observations, path, name, prefix='', suffix='', ext='png')
 │   ├── concat
 │   │   ├── concat_horizontally(observations, margin_width=0)
 │   │   └── concat_vertically(observations, margin_height=0)
@@ -114,7 +115,7 @@ gymutils
 │   └── view
 │       ├── look
 │       ├── Recorder
-│       └── save(observations, path, name, prefix='', suffix='', ext='png')
+│       └── save
 └── text_array
     └── TextArrayGenerator3D(canvas_size=None, font_size=1)
         ├── reset(canvas_size=None, font_size=1)
