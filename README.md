@@ -82,7 +82,7 @@ recorder.stop()
 gymutils
 ├── observation
 │   ├── look(observation)
-│   ├── PongBallTrajectoryDrawer(alpha=0.5)
+│   ├── TrajectoryDrawer(env_name='Pong', alpha=0.5)
 │   │   └── draw(observation)
 │   ├── Recorder(fps=15, size=(210, 160), path='.', out='out')
 │   │   ├── record(observations, cvt_color=True)
@@ -91,7 +91,7 @@ gymutils
 │   │   ├── concat_horizontally(observations, margin_width=0)
 │   │   └── concat_vertically(observations, margin_height=0)
 │   ├── draw
-│   │   └── PongBallTrajectoryDrawer
+│   │   └── TrajectoryDrawer
 │   └── view
 │       ├── look
 │       ├── Recorder
