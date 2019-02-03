@@ -76,6 +76,24 @@ recorder.stop()
 
 ~~[result3](./images/result3.mov)~~
 
+### Draw ball trajectory
+```
+from gymutils.observation import TrajectoryDrawer
+
+_ = env.reset()
+for _ in range(20): _ = env.step(0)
+
+drawer = TrajectoryDrawer()
+
+for _ in range(5):
+    obs, _, _, _ = env.step(2)
+    drawing = drawer.draw(obs)
+
+save(drawing, './images', 'result4')
+```
+
+![Result4](./images/result4.png)
+
 
 ## API
 ```
@@ -83,6 +101,7 @@ gymutils
 ├── observation
 │   ├── look(observation)
 │   ├── TrajectoryDrawer(env_name='Pong', alpha=0.5)
+│   │   ├── get_env_name()
 │   │   └── draw(observation)
 │   ├── Recorder(fps=15, size=(210, 160), path='.', out='out')
 │   │   ├── record(observations, cvt_color=True)
