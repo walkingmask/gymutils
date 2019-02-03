@@ -9,6 +9,13 @@ cd gymutils && pip install -e .
 ```
 
 
+## Requirements
+- numpy
+- opencv-python
+- Pillow
+- scikit-image
+
+
 ## Usage
 ### Look and save multiple observations
 ```
@@ -67,21 +74,27 @@ while not done:
 recorder.stop()
 ```
 
-[result3](./images/result3.mov)
+~~[result3](./images/result3.mov)~~
 
 
 ## API
 ```
 gymutils
 ├── observation
+│   ├── look(observation)
+│   ├── PongBallTrajectoryDrawer(alpha=0.5)
+│   │   └── draw(observation)
+│   ├── Recorder(fps=15, size=(210, 160), path='.', out='out')
+│   │   ├── record(observations, cvt_color=True)
+│   │   └── stop()
 │   ├── concat
 │   │   ├── concat_horizontally(observations, margin_width=0)
 │   │   └── concat_vertically(observations, margin_height=0)
+│   ├── draw
+│   │   └── PongBallTrajectoryDrawer
 │   └── view
-│       ├── look(observations)
-│       ├── Recorder(fps=15, size=(210, 160), path='.', out='out')
-│       │   ├── record(observations, cvt_color=True)
-│       │   └── stop()
+│       ├── look
+│       ├── Recorder
 │       └── save(observations, path, name, prefix='', suffix='', ext='png')
 └── text_array
     └── TextArrayGenerator3D(canvas_size=None, font_size=1)

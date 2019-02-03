@@ -13,6 +13,6 @@ setup(
     author_email='walkingmask@gmail.com',
     long_description=long_description,
     license='MIT',
-    install_requires=['opencv-python', 'numpy', 'Pillow', 'scikit-image'],
+    install_requires=['numpy', 'opencv-python', 'Pillow', 'scikit-image'],
     packages=find_packages()
 )
