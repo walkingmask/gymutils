@@ -112,6 +112,7 @@ gymutils
 │   ├── save(observations, path, name, prefix='', suffix='', ext='png')
 │   ├── concat
 │   │   ├── concat_horizontally(observations, margin_width=0)
+│   │   ├── concat_table(observations_table, margin_width=0, margin_height=0)
 │   │   └── concat_vertically(observations, margin_height=0)
 │   ├── draw
 │   │   └── TrajectoryDrawer
