@@ -1,9 +1,10 @@
 from collections import namedtuple
 
+from gymutils.env.name import get_base_name
 import numpy as np
 
 
-ENVS = {
+ENVS_INFO = {
     'Pong': {
         'action_space': (slice(34, 194), slice(0, 160)),
         'object_colors': [[236, 236, 236], [213, 130, 74], [92, 186, 92]],
@@ -12,10 +13,10 @@ ENVS = {
 
 
 class TrajectoryDrawer:
-    def __init__(self, env_name='Pong', alpha=0.5):
-        self.env_name = env_name
-        self.action_space = ENVS[env_name]['action_space']
-        self.object_colors = ENVS[env_name]['object_colors']
+    def __init__(self, env_name='Pong-v0', alpha=0.5):
+        self.env_name = get_base_name(env_name)
+        self.action_space = ENVS_INFO[self.env_name]['action_space']
+        self.object_colors = ENVS_INFO[self.env_name]['object_colors']
         self.alpha = alpha
         self.drawing = None
 
