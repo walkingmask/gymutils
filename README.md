@@ -98,6 +98,9 @@ save(drawing, './images', 'result4')
 ## API
 ```
 gymutils
+├── Timer()
+│   ├── get()
+│   └── reset()
 ├── observation
 │   ├── look(observation)
 │   ├── TrajectoryDrawer(env_name='Pong', alpha=0.5)
@@ -116,8 +119,10 @@ gymutils
 │       ├── look
 │       ├── Recorder
 │       └── save
-└── text_array
-    └── TextArrayGenerator3D(canvas_size=None, font_size=1)
-        ├── reset(canvas_size=None, font_size=1)
-        └── generate(list_of_str)
+├── text_array
+│   └── TextArrayGenerator3D(canvas_size=None, font_size=1)
+│       ├── reset(canvas_size=None, font_size=1)
+│       └── generate(list_of_str)
+└── time
+    └── Timer
 ```

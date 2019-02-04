@@ -21,3 +21,10 @@ def concat_vertically(observations, margin_height=0):
         margin = np.zeros([margin_height, width, 3], dtype=result.dtype)
         result = np.concatenate([result, margin, observation], axis=0)
     return result
+
+
+def concat_table(observations_table, margin_width=0, margin_height=0):
+    columns = []
+    for observations_column in observations_table:
+        columns.append(concat_horizontally(observations_column, margin_width))
+    return concat_vertically(columns, margin_height)

@@ -22,7 +22,7 @@ def generate_text_array_3D(char_dict_3D, text, canvas_size=None):
     string_arrays = [generate_string_array_3D(char_dict_3D, string) for string in text]
     text_array = string_arrays[0]
     for string_array in string_arrays[1:]:
-        text_array = concat_vertically(text_array, string_array)
+        text_array = concat_vertically([text_array, string_array])
 
     if canvas_size:
         if text_array.shape[0] > canvas_size[0] or text_array.shape[1] > canvas_size[1]:
