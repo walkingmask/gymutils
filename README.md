@@ -103,9 +103,12 @@ gymutils
 │   └── reset()
 ├── action
 │   ├── get_action_labels(env_name)
-│   └── label
-│       ├── ACTION_LABELS
-│       └── get_action_labels
+│   ├── get_action_space(env_name)
+│   ├── label
+│   │   ├── ACTION_LABELS
+│   │   └── get_action_labels
+│   └── space
+│       └── get_action_space
 ├── env
 │   ├── get_all_env_names()
 │   └── name
