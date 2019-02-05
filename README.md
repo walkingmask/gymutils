@@ -101,9 +101,21 @@ gymutils
 ├── Timer()
 │   ├── get()
 │   └── reset()
+├── action
+│   ├── get_action_labels(env_name)
+│   └── label
+│       ├── ACTION_LABELS
+│       └── get_action_labels
+├── env
+│   ├── get_all_env_names()
+│   └── name
+│       ├── SUFFIXES
+│       ├── get_base_name(env_name)
+│       ├── get_all_env_names
+│       └── get_all_env_ids()
 ├── observation
 │   ├── look(observation)
-│   ├── TrajectoryDrawer(env_name='Pong', alpha=0.5)
+│   ├── TrajectoryDrawer(env_name='Pong-v0', alpha=0.5)
 │   │   ├── get_env_name()
 │   │   └── draw(observation)
 │   ├── Recorder(fps=15, size=(210, 160), path='.', out='out')
@@ -121,9 +133,17 @@ gymutils
 │       ├── Recorder
 │       └── save
 ├── text_array
-│   └── TextArrayGenerator3D(canvas_size=None, font_size=1)
-│       ├── reset(canvas_size=None, font_size=1)
-│       └── generate(list_of_str)
+│   ├── TextArrayGenerator3D(canvas_size=None, font_size=1)
+│   │   ├── reset(canvas_size=None, font_size=1)
+│   │   └── generate(list_of_str)
+│   ├── generator
+│   │   ├── generate_string_array_3D(char_dict_3D, string)
+│   │   ├── generate_text_array_3D(char_dict_3D, text, canvas_size=None)
+│   │   └── TextArrayGenerator3D
+│   └── loader
+│       ├── get_char_list_from_file()
+│       ├── get_char_dict()
+│       └── get_char_dict_3D(font_size=1)
 └── time
     └── Timer
 ```
