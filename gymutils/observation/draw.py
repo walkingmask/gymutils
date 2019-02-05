@@ -19,9 +19,9 @@ class TrajectoryDrawer:
     def _get_shadows(self, observation):
         shadows = []
         for color in self.object_colors:
-            shadow = np.zeros([210, 160, 3])
-            shadow[self.action_space] = \
-                np.prod(observation[self.action_space] == color, axis=2)
+            _shadow = np.prod(observation[self.action_area] == color, axis=2, keepdims=True)
+            shadow = np.zeros([*observation.shape[:-1], 1])
+            shadow[self.action_area] = _shadow
             shadows.append(shadow)
         return shadows
 
