@@ -6,8 +6,6 @@ from skimage.transform import rescale
 from gymutils.observation.concat import concat_vertically
 from gymutils.text_array.loader import get_char_dict_3D
 
-from gymutils.observation.view import look
-
 
 def generate_string_array_3D(char_dict_3D, string):
     blank = char_dict_3D[0]

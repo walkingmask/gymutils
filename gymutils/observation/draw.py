@@ -1,22 +1,15 @@
 from collections import namedtuple
 
-from gymutils.env.name import get_base_name
+from gymutils.env import get_env_infos
 import numpy as np
-
-
-ENVS_INFO = {
-    'Pong': {
-        'action_space': (slice(34, 194), slice(0, 160)),
-        'object_colors': [[236, 236, 236], [213, 130, 74], [92, 186, 92]],
-    },
-}
 
 
 class TrajectoryDrawer:
     def __init__(self, env_name='Pong-v0', alpha=0.5):
-        self.env_name = get_base_name(env_name)
-        self.action_space = ENVS_INFO[self.env_name]['action_space']
-        self.object_colors = ENVS_INFO[self.env_name]['object_colors']
+        self.env_name = env_name
+        env_infos = get_env_infos(env_name)
+        self.action_area = env_infos['action_area']
+        self.object_colors = env_infos['object_colors']
         self.alpha = alpha
         self.drawing = None
 
@@ -27,7 +20,8 @@ class TrajectoryDrawer:
         shadows = []
         for color in self.object_colors:
             shadow = np.zeros([210, 160, 3])
-            shadow[self.action_space] = observation[self.action_space] == color
+            shadow[self.action_space] = \
+                np.prod(observation[self.action_space] == color, axis=2)
             shadows.append(shadow)
         return shadows
 
