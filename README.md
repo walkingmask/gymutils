@@ -9,14 +9,7 @@ gymutils
 │   ├── reset()
 │   └── get() -> str
 ├── action
-│   ├── get_random_action(action_space_n: int) -> int
-│   ├── get_action_labels(env_name: str) -> list
-│   ├── get_action_space_n(env_name: str) -> int
-│   ├── label
-│   │   ├── ACTION_LABELS
-│   │   └── get_action_labels
-│   └── space
-│       └── get_action_space
+│   └── get_random_action(action_space_n: int) -> int
 ├── env
 │   ├── get_env_infos(env_name: str) -> dict
 │   ├── get_all_env_names() -> list
