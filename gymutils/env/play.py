@@ -2,6 +2,14 @@ import gym
 from gym.utils.play import play
 
 
+def play_with_cb(env_name, fps=60, zoom=3):
+    def cb(*args):
+        print('a:', args[2])
+        print('r:', args[3]) if args[3] != 0 else None
+    env = gym.make(env_name)
+    play(env, fps=fps, zoom=zoom, callback=cb)
+
+
 def play_all_atari_envs(n_episodes=10, v=4, deterministic=False, noframeskip=True, fps=60, zoom=3, callback=None):
     for game in ['alien', 'amidar', 'assault', 'asterix', 'asteroids', 'atlantis',
         'bank_heist', 'battle_zone', 'beam_rider', 'berzerk', 'bowling', 'boxing', 'breakout', 'carnival',
