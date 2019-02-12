@@ -2,10 +2,11 @@ import gym
 from gym.utils.play import play
 
 
-def play_with_cb(env_name, fps=60, zoom=3):
-    def cb(*args):
+def play_with_cb(env_name, fps=60, zoom=3, cb=None):
+    def _cb(*args):
         print('a:', args[2])
         print('r:', args[3]) if args[3] != 0 else None
+    cb = _cb if cb is None else cb
     env = gym.make(env_name)
     play(env, fps=fps, zoom=zoom, callback=cb)
 
