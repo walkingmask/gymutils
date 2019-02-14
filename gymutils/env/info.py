@@ -49,6 +49,19 @@ ENVS_INFOS = {
         ],
         'backgrounds': [[0, 0, 0]],
     },
+    'Boxing': {
+        'action_area': (slice(36, 177), slice(32, 128)),
+        'action_space_n': 18,
+        'action_labels': ['NOOP', 'FIRE', 'UP', 'RIGHT', 'LEFT', 'DOWN',
+                          'UPRIGHT', 'UPLEFT', 'DOWNRIGHT', 'DOWNLEFT',
+                          'UPFIRE', 'RIGHTFIRE', 'LEFTFIRE', 'DOWNFIRE',
+                          'UPRIGHTFIRE', 'UPLEFTFIRE', 'DOWNRIGHTFIRE', 'DOWNLEFTFIRE',
+        ],
+        'object_colors': [
+            [214, 214, 214], [0, 0, 0],
+        ],
+        'backgrounds': [[110, 156, 66]],
+    },
 }
 
 
