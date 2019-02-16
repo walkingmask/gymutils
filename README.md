@@ -84,7 +84,7 @@ cd gymutils && pip install -e .
 - numpy
 - opencv-python
 - Pillow
-- scikit-image
+- scikit-image >= 0.14
 
 
 ## Examples
