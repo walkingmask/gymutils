@@ -26,7 +26,7 @@ class Recorder:
         video_ext = None
         if video_format == 'mp4v':
             video_ext = 'mov'
-        elif video_format == 'MP4V':
+        elif video_format in ['MP4V', 'H264']:
             video_ext = 'mp4'
 
         size = (size[1], size[0])
