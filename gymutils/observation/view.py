@@ -23,8 +23,14 @@ def save(observation, path, name, prefix='', suffix='', ext='png'):
 
 class Recorder:
     def __init__(self, fps=15, size=(210, 160), path='.', out='out', video_format='mp4v'):
+        video_ext = None
+        if video_format == 'mp4v':
+            video_ext = 'mov'
+        elif video_format == 'MP4V':
+            video_ext = 'mp4'
+
         size = (size[1], size[0])
-        out = "{}/{}.mov".format(path, out)
+        out = "{}/{}.{}".format(path, out, video_ext)
         fourcc = cv2.VideoWriter_fourcc(*video_format)
         self.recorder = cv2.VideoWriter(out, fourcc, fps, size)
 
