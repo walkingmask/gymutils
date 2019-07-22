@@ -22,10 +22,10 @@ def save(observation, path, name, prefix='', suffix='', ext='png'):
 
 
 class Recorder:
-    def __init__(self, fps=15, size=(210, 160), path='.', out='out'):
+    def __init__(self, fps=15, size=(210, 160), path='.', out='out', video_format='mp4v'):
         size = (size[1], size[0])
         out = "{}/{}.mov".format(path, out)
-        fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+        fourcc = cv2.VideoWriter_fourcc(*video_format)
         self.recorder = cv2.VideoWriter(out, fourcc, fps, size)
 
     def record(self, observation, cvt_color=True):
