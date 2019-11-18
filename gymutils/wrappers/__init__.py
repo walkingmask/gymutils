@@ -1,4 +1,4 @@
-from gymutils.wrappers.plannables import SaveableEnv, ObsTreeEnv
+from gymutils.wrappers.plannables import SavableEnv, ObsTreeEnv
 
 
-__all__ = ['SaveableEnv', 'ObsTreeEnv']
+__all__ = ['SavableEnv', 'ObsTreeEnv']
